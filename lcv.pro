@@ -10,6 +10,7 @@ PRECOMPILED_HEADER = pch.h
 
 include(./opencv.pri)
 include(./day-1-basic-operations/day-1-basic-operations.pri)
+include(./day-2-more-operations/day-2-more-operations.pri)
 
 SOURCES += \
     main.cpp \

@@ -1,7 +1,6 @@
 #ifndef CROP_AND_RESIZE_H
 #define CROP_AND_RESIZE_H
 
-
 namespace CropAndResize
 {
     void test(const std::string& path)

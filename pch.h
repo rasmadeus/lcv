@@ -1,7 +1,9 @@
 #ifndef PCH_H
 
 #include <iostream>
+#include <math.h>
 #include <string>
+#include <vector>
 
 #include <QtCore>
 #include <QtGui>

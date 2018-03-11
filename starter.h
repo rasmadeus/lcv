@@ -11,6 +11,11 @@ private:
     void readWriteDisplay();
     void cropAndResize();
     void rotate();
+
+    void drawShape();
+    void highguiMouse();
+    void videoRead();
+    void videoWrite();
 };
 
 #endif // STARTER_H
