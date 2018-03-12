@@ -9,6 +9,10 @@
 #include "videoRead.h"
 #include "videoWrite.h"
 
+#include "homographyBook.h"
+#include "perspectiveCorrection.h"
+#include "virtualBillboard.h"
+
 Starter::Starter(QWidget* parent)
     : QWidget{ parent }
 {
@@ -41,6 +45,19 @@ Starter::Starter(QWidget* parent)
     auto writeVideoButton = new QPushButton{ tr("Write video"), this };
     layout->addWidget(writeVideoButton);
     connect(writeVideoButton, &QPushButton::clicked, this, &Starter::videoWrite);
+
+    auto homographyBookButton = new QPushButton{ tr("Homography book"), this };
+    layout->addWidget(homographyBookButton);
+    connect(homographyBookButton, &QPushButton::clicked, this, &Starter::homographyBook);
+
+    auto perspectiveCorrectionButton = new QPushButton{ tr("Perspective correction"), this };
+    layout->addWidget(perspectiveCorrectionButton);
+    connect(perspectiveCorrectionButton, &QPushButton::clicked, this, &Starter::perspectiveCorrection);
+
+    auto virtualBillboardButton = new QPushButton{ tr("Virtual billboard"), this };
+    layout->addWidget(virtualBillboardButton);
+    connect(virtualBillboardButton, &QPushButton::clicked, this, &Starter::virtualBillboard);
+
 }
 
 void Starter::readWriteDisplay()
@@ -100,4 +117,31 @@ void Starter::videoRead()
 void Starter::videoWrite()
 {
     VideoWrite::test();
+}
+
+void Starter::homographyBook()
+{
+    const auto dir = QFileDialog::getExistingDirectory(this, tr("Select dir"));
+    if (!dir.isEmpty())
+    {
+        HomographyBook::test(dir.toStdString());
+    }
+}
+
+void Starter::perspectiveCorrection()
+{
+    const auto path = QFileDialog::getOpenFileName(this, tr("Open image"));
+    if (!path.isEmpty())
+    {
+        PerspectiveCorrection::test(path.toStdString());
+    }
+}
+
+void Starter::virtualBillboard()
+{
+    const auto dir = QFileDialog::getExistingDirectory(this, tr("Select dir"));
+    if (!dir.isEmpty())
+    {
+        VirtualBillboard::test(dir.toStdString());
+    }
 }

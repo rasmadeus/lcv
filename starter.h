@@ -16,6 +16,10 @@ private:
     void highguiMouse();
     void videoRead();
     void videoWrite();
+
+    void homographyBook();
+    void perspectiveCorrection();
+    void virtualBillboard();
 };
 
 #endif // STARTER_H
