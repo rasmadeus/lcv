@@ -20,6 +20,9 @@ private:
     void homographyBook();
     void perspectiveCorrection();
     void virtualBillboard();
+
+    void detectFaceDemo();
+    void detectFaceAndSmileDemo();
 };
 
 #endif // STARTER_H

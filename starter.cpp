@@ -13,6 +13,9 @@
 #include "perspectiveCorrection.h"
 #include "virtualBillboard.h"
 
+#include "detectFaceDemo.h"
+#include "detectFaceSmileDemo.h"
+
 Starter::Starter(QWidget* parent)
     : QWidget{ parent }
 {
@@ -57,6 +60,14 @@ Starter::Starter(QWidget* parent)
     auto virtualBillboardButton = new QPushButton{ tr("Virtual billboard"), this };
     layout->addWidget(virtualBillboardButton);
     connect(virtualBillboardButton, &QPushButton::clicked, this, &Starter::virtualBillboard);
+
+    auto detectFaceDemoButton = new QPushButton{ tr("Detect face demo"), this };
+    layout->addWidget(detectFaceDemoButton);
+    connect(detectFaceDemoButton, &QPushButton::clicked, this, &Starter::detectFaceDemo);
+
+    auto detectFaceAndSmileDemoButton = new QPushButton{ tr("Detect face and smile demo"), this };
+    layout->addWidget(detectFaceAndSmileDemoButton);
+    connect(detectFaceAndSmileDemoButton, &QPushButton::clicked, this, &Starter::detectFaceAndSmileDemo);
 
 }
 
@@ -143,5 +154,23 @@ void Starter::virtualBillboard()
     if (!dir.isEmpty())
     {
         VirtualBillboard::test(dir.toStdString());
+    }
+}
+
+void Starter::detectFaceDemo()
+{
+    const auto dir = QFileDialog::getExistingDirectory(this, tr("Select dir"));
+    if (!dir.isEmpty())
+    {
+        DetectFaceDemo::test(dir.toStdString());
+    }
+}
+
+void Starter::detectFaceAndSmileDemo()
+{
+    const auto dir = QFileDialog::getExistingDirectory(this, tr("Select dir"));
+    if (!dir.isEmpty())
+    {
+        DetectFaceAndSmileDemo::test(dir.toStdString());
     }
 }
