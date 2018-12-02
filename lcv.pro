@@ -9,15 +9,9 @@ CONFIG += precompile_header c++14
 PRECOMPILED_HEADER = pch.h
 
 include(./opencv.pri)
-include(./day-1-basic-operations/day-1-basic-operations.pri)
-include(./day-2-more-operations/day-2-more-operations.pri)
-include(./day-3-image-transformations/day-3-image-transformations.pri)
-include(./day-4-face-detection/day-4-face-detection.pri)
 
 SOURCES += \
-    main.cpp \
-    starter.cpp
+    main.cpp
 
 HEADERS += \
-    pch.h \
-    starter.h
+    pch.h
