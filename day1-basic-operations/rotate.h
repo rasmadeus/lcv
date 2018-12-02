@@ -1,35 +1,24 @@
-#include <opencv2/opencv.hpp>
+#include "common.h"
 
-using namespace std;
-using namespace cv;
-
-int main(void)
+namespace lcv
 {
-Mat source, M, result;
+    void rotate()
+    {
+        auto source = imgFromQrc(QStringLiteral(":/res/sample.jpg"), cv::IMREAD_COLOR);
+        cv::Point2f center{ static_cast<float>(source.cols / 2.0), static_cast<float>(source.rows / 2.0) };
 
-// Reading the image
-source = cv::imread("sample.jpg",1);
+        constexpr double rotationAngle = 30;
+        constexpr double scale = 1.0;
 
-Point2f center(source.cols/2, source.rows/2);
-double rotationAngle=30;
-double scale=1;
+        auto rotateMatrix = cv::getRotationMatrix2D(center, rotationAngle, scale);
 
-// Getting the matrix which will define the rotation
-M = cv::getRotationMatrix2D(center, 
-	rotationAngle, scale);
+        cv::Mat res;
+        cv::warpAffine(source, res, rotateMatrix, cv::Size{ source.cols, source.rows });
 
-// Rotating the source and storing in result
-cv::warpAffine(source, result, M, 
-	Size(source.cols, source.rows));
+        cv::namedWindow("Original Image", cv::WINDOW_AUTOSIZE);
+        cv::namedWindow("Rotated Image", cv::WINDOW_AUTOSIZE);
 
-// Create windows for display
-namedWindow("Original Image", WINDOW_AUTOSIZE);
-namedWindow("Rotated Image", WINDOW_AUTOSIZE);
-
-// Display images
-imshow("Original Image", source);
-imshow("Rotated Image", result);
-
-waitKey(0);
-
+        cv::imshow("Original Image", source);
+        cv::imshow("Rotated Image", res);
+    }
 }

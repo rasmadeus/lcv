@@ -15,4 +15,8 @@ SOURCES += \
     main.cpp
 
 HEADERS += \
-    pch.h
+    pch.h \
+    common.h
+
+RESOURCES += \
+    res.qrc

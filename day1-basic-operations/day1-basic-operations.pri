@@ -2,10 +2,10 @@ INCLUDEPATH += \
     $$PWD
 
 HEADERS += \
-    $$PWD/cropAndResize.h \
-    $$PWD/datatypeConversion.h \
-    $$PWD/readWriteDisplay.h \
-    $$PWD/rotate.h
+    $$PWD/rotate.h \
+    $$PWD/crop_and_resize.h \
+    $$PWD/datatype_conversion.h \
+    $$PWD/read_write_display.h
 
 
 
