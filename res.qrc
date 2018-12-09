@@ -2,5 +2,9 @@
     <qresource prefix="/">
         <file>res/sample.jpg</file>
         <file>res/mark.jpg</file>
+        <file>res/times-square.jpg</file>
+        <file>res/first-image.jpg</file>
+        <file>res/book1.jpg</file>
+        <file>res/book2.jpg</file>
     </qresource>
 </RCC>

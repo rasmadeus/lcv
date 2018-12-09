@@ -1,11 +1,10 @@
 #include <QApplication>
-#include "draw_shape.h"
-#include "get_affine.h"
-#include "warp_affine.h"
+#include "homography_book.h"
+#include "perspective_correction.h"
+#include "virtual_billboard.h"
+
 
 int main(int argc, char *argv[])
 {
-    QApplication app{ argc, argv };
-    lcv::warp_affine();
-    return app.exec();
+    lcv::day2::virtual_billboard();
 }
