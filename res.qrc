@@ -6,5 +6,6 @@
         <file>res/first-image.jpg</file>
         <file>res/book1.jpg</file>
         <file>res/book2.jpg</file>
+        <file>res/models/hillary_clinton.jpg</file>
     </qresource>
 </RCC>

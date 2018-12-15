@@ -1,10 +1,11 @@
 #include <QApplication>
-#include "homography_book.h"
-#include "perspective_correction.h"
-#include "virtual_billboard.h"
-
+#include "detect_face_demo.h"
+#include "detect_face_smile_demo.h"
+#include "face_detection_opencv_dnn.h"
 
 int main(int argc, char *argv[])
 {
-    lcv::day2::virtual_billboard();
+    Q_UNUSED(argc)
+    Q_UNUSED(argv)
+    lcv::day4::face_detection_dnn();
 }

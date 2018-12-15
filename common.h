@@ -2,15 +2,17 @@
 #define COMMON_H
 
 #include <vector>
+#include <QApplication>
 #include <QFile>
-#include <QStringView>
+#include <QFileInfo>
+#include <QString>
 #include <opencv2/opencv.hpp>
 
 namespace lcv
 {
-    inline cv::Mat imgFromQrc(QStringView qrc, int flag = cv::IMREAD_COLOR)
+    inline cv::Mat imgFromQrc(QString const &qrc, int flag = cv::IMREAD_COLOR)
     {
-        QFile file{ qrc.toString() };
+        QFile file{ qrc };
         cv::Mat res;
         if (file.open(QIODevice::ReadOnly))
         {
@@ -21,6 +23,15 @@ namespace lcv
             res = cv::imdecode(buf, flag);
         }
         return  res;
+    }
+
+    inline QString moveFile(QString const &res)
+    {
+        QFile file{ res };
+        if (!file.open(QIODevice::ReadOnly))
+            return {};
+        auto const path = QStringLiteral("%1/%2").arg(qApp->applicationDirPath()).arg(QFileInfo{ file.fileName() }.fileName());
+        return file.copy(path) ? QString{} : path;
     }
 }
 
