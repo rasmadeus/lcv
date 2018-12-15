@@ -1,4 +1,3 @@
-#include <QApplication>
 #include "detect_face_demo.h"
 #include "detect_face_smile_demo.h"
 #include "face_detection_opencv_dnn.h"
