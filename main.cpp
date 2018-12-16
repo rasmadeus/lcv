@@ -1,10 +1,10 @@
-#include "detect_face_demo.h"
-#include "detect_face_smile_demo.h"
-#include "face_detection_opencv_dnn.h"
+#include "image_classification_caffe.h"
+#include "image_classification_tensorflow.h"
+#include "train_digits.h"
 
 int main(int argc, char *argv[])
 {
     Q_UNUSED(argc)
     Q_UNUSED(argv)
-    lcv::day4::face_detection_dnn();
+    lcv::day5::train_digits();
 }

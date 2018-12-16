@@ -13,6 +13,7 @@ include(./day1-basic-operations/day1-basic-operations.pri)
 include(./day2-more-operations/day2-more-operations.pri)
 include(./day3-image-transformations/day3-image-transformations.pri)
 include(./day4-face-detection/day4-face-detection.pri)
+include(./day5-image-classification/day5-image-classification.pri)
 
 SOURCES += \
     main.cpp

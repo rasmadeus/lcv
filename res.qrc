@@ -7,5 +7,8 @@
         <file>res/book1.jpg</file>
         <file>res/book2.jpg</file>
         <file>res/models/hillary_clinton.jpg</file>
+        <file>res/panda.jpg</file>
+        <file>res/digits-classification.jpg</file>
+        <file>res/digits.png</file>
     </qresource>
 </RCC>
