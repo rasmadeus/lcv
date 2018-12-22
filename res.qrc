@@ -10,5 +10,9 @@
         <file>res/panda.jpg</file>
         <file>res/digits-classification.jpg</file>
         <file>res/digits.png</file>
+        <file>res/bird.jpg</file>
+        <file>res/yolov3.cfg</file>
+        <file>res/get_models.sh</file>
+        <file>res/coco.names</file>
     </qresource>
 </RCC>
